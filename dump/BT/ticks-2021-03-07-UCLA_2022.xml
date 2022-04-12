@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<eml:eml xmlns:eml="https://eml.ecoinformatics.org/eml-2.2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:stmml="http://www.xml-cml.org/schema/stmml-1.2" packageId="2022-04-04 10:37:35" system="datetime" xsi:schemaLocation="https://eml.ecoinformatics.org/eml-2.2.0 https://eml.ecoinformatics.org/eml-2.2.0/eml.xsd">
+  <dataset>
+    <title>UCLA_2022 </title>
+    <creator>
+      <individualName>
+        <givenName>Ben</givenName>
+        <surName>Tonelli</surName>
+      </individualName>
+      <organizationName>UCLA</organizationName>
+      <electronicMailAddress>btonelli@ucla.edu</electronicMailAddress>
+    </creator>
+    <creator>
+      <individualName>
+        <givenName>Graham</givenName>
+        <surName>Montgomery</surName>
+      </individualName>
+      <organizationName>UCLA</organizationName>
+    </creator>
+    <pubDate>2022-04-04</pubDate>
+    <intellectualRights>https://creativecommons.org/licenses/by/4.0/</intellectualRights>
+    <coverage>
+      <geographicCoverage>
+        <geographicDescription>BLAN, D02</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-78.0418</westBoundingCoordinate>
+          <eastBoundingCoordinate>-78.0418</eastBoundingCoordinate>
+          <northBoundingCoordinate>39.0337</northBoundingCoordinate>
+          <southBoundingCoordinate>39.0337</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <geographicCoverage>
+        <geographicDescription>KONZ, D06</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-96.5631</westBoundingCoordinate>
+          <eastBoundingCoordinate>-96.5631</eastBoundingCoordinate>
+          <northBoundingCoordinate>39.1008</northBoundingCoordinate>
+          <southBoundingCoordinate>39.1008</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <geographicCoverage>
+        <geographicDescription>LENO, D08</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-88.1612</westBoundingCoordinate>
+          <eastBoundingCoordinate>-88.1612</eastBoundingCoordinate>
+          <northBoundingCoordinate>31.8539</northBoundingCoordinate>
+          <southBoundingCoordinate>31.8539</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <geographicCoverage>
+        <geographicDescription>ORNL, D07</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-84.2826</westBoundingCoordinate>
+          <eastBoundingCoordinate>-84.2826</eastBoundingCoordinate>
+          <northBoundingCoordinate>35.9641</northBoundingCoordinate>
+          <southBoundingCoordinate>35.9641</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <geographicCoverage>
+        <geographicDescription>OSBS, D03</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-81.9934</westBoundingCoordinate>
+          <eastBoundingCoordinate>-81.9934</eastBoundingCoordinate>
+          <northBoundingCoordinate>29.6893</northBoundingCoordinate>
+          <southBoundingCoordinate>29.6893</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <geographicCoverage>
+        <geographicDescription>SCBI, D02</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-78.1395</westBoundingCoordinate>
+          <eastBoundingCoordinate>-78.1395</eastBoundingCoordinate>
+          <northBoundingCoordinate>38.8929</northBoundingCoordinate>
+          <southBoundingCoordinate>38.8929</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <geographicCoverage>
+        <geographicDescription>SERC, D02</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-76.56</westBoundingCoordinate>
+          <eastBoundingCoordinate>-76.56</eastBoundingCoordinate>
+          <northBoundingCoordinate>38.8901</northBoundingCoordinate>
+          <southBoundingCoordinate>38.8901</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <geographicCoverage>
+        <geographicDescription>TALL, D08</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-87.3933</westBoundingCoordinate>
+          <eastBoundingCoordinate>-87.3933</eastBoundingCoordinate>
+          <northBoundingCoordinate>32.9505</northBoundingCoordinate>
+          <southBoundingCoordinate>32.9505</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <geographicCoverage>
+        <geographicDescription>UKFS, D06</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-95.1921</westBoundingCoordinate>
+          <eastBoundingCoordinate>-95.1921</eastBoundingCoordinate>
+          <northBoundingCoordinate>39.0404</northBoundingCoordinate>
+          <southBoundingCoordinate>39.0404</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <temporalCoverage>
+        <rangeOfDates>
+          <beginDate>
+            <calendarDate>2021-03-07</calendarDate>
+          </beginDate>
+          <endDate>
+            <calendarDate>2021-03-28</calendarDate>
+          </endDate>
+        </rangeOfDates>
+      </temporalCoverage>
+    </coverage>
+    <contact>
+      <individualName>
+        <givenName>Ben</givenName>
+        <surName>Tonelli</surName>
+      </individualName>
+      <organizationName>UCLA</organizationName>
+      <electronicMailAddress>btonelli@ucla.edu</electronicMailAddress>
+    </contact>
+    <dataTable>
+      <entityName>forecast</entityName>
+      <physical>
+        <objectName>ticks-2021-03-07-UCLA_2022.csv</objectName>
+        <size unit="bytes">6343</size>
+        <authentication method="MD5">a30aaa0675647d418fa588e5db9b64e1</authentication>
+        <dataFormat>
+          <textFormat>
+            <recordDelimiter>
+</recordDelimiter>
+            <attributeOrientation>column</attributeOrientation>
+            <simpleDelimited>
+              <fieldDelimiter>,</fieldDelimiter>
+            </simpleDelimited>
+          </textFormat>
+        </dataFormat>
+      </physical>
+      <attributeList>
+        <attribute>
+          <attributeName>time</attributeName>
+          <attributeDefinition>[dimension]{time}</attributeDefinition>
+          <storageType>date</storageType>
+          <measurementScale>
+            <dateTime>
+              <formatString>YYYY-MM-DD</formatString>
+              <dateTimeDomain/>
+            </dateTime>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>siteID</attributeName>
+          <attributeDefinition>[dimension]{neon site}</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>NEON site ID</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>forecast</attributeName>
+          <attributeDefinition>[flag]{whether represents forecast}</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>dimensionless</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>integer</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>amblyomma_americanum</attributeName>
+          <attributeDefinition>[variable]{number of Amblyomma americanum nymphs per plot per week}</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>dimensionless</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+      </attributeList>
+    </dataTable>
+  </dataset>
+  <additionalMetadata>
+    <metadata>
+      <forecast>
+        <drivers>
+          <status>absent</status>
+        </drivers>
+        <forecast_horizon>2419200 seconds</forecast_horizon>
+        <forecast_issue_time>2022-04-04</forecast_issue_time>
+        <forecast_iteration_id>2022-04-04 10:37:35</forecast_iteration_id>
+        <forecast_project_id>UCLA_2022</forecast_project_id>
+        <initial_conditions>
+          <status>absent</status>
+        </initial_conditions>
+        <metadata_standard_version>0.3</metadata_standard_version>
+        <model_description>
+          <forecast_model_id>ticks</forecast_model_id>
+          <name>Combined loess model</name>
+          <repository>https://github.com/bentonelli/Turkey_Ticks_2022/scripts/template_script.R</repository>
+          <type>empirical</type>
+        </model_description>
+        <obs_error>
+          <status>absent</status>
+        </obs_error>
+        <parameters>
+          <status>absent</status>
+        </parameters>
+        <process_error>
+          <complexity>2</complexity>
+          <status>data_driven</status>
+        </process_error>
+        <random_effects>
+          <status>absent</status>
+        </random_effects>
+        <timestep>604800</timestep>
+      </forecast>
+    </metadata>
+  </additionalMetadata>
+</eml:eml>
