@@ -1,0 +1,1 @@
+Annual temperature reports for the 9 NEON sites. Calculated from the weekly temperature data.

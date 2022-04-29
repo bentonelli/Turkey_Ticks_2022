@@ -7,8 +7,8 @@ days <- 1:200
 #Arrays (200 values, represent precipitation, temperature, host phenology, etc)
 
 #Starting population sizes
-larvae <- 500 #by life stage
-nymphs <- 100
+larvae <- 5000 #by life stage
+nymphs <- 50
 adults <- 50
 
 #Setting up record keeping
