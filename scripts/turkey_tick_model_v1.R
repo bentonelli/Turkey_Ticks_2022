@@ -24,12 +24,12 @@ precip_data_avg$stand_prec <- precip_data_avg$mean_week_precip - mean(precip_dat
 plot(precip_data_avg$week,precip_data_avg$stand_prec)
 
 turkey_tick_model_v1 <- function(temp_data = temp_data_avg,precip_data = precip_data_avg,
-                                 br_larvae_molt=.001,br_nymph_molt=.001,br_adult_breed=.0185,
-                                 max_larvae_molt=.01,max_nymph_molt=.01,
+                                 br_larvae_molt=.001,br_nymph_molt=.001,br_adult_breed=.002,
+                                 max_larvae_molt=.01,max_nymph_molt=.01,max_adult_breed=.1,
                                  exp_temp_param_larv_molt=0.0000,exp_temp_param_nymph_molt = 0.0001,
                                  exp_precip_param_larv_molt=0.00001,exp_precip_param_nymph_molt = 0.00001,
                                  exp_temp_param_adult_breed=0.0002,
-                                days=365,starting_nymphs = 10,starting_adults=10){
+                                 starting_nymphs = 10,starting_adults=10){
   
   # Setting up the # days the simulation runs for
   days <- 1:365
@@ -56,7 +56,7 @@ turkey_tick_model_v1 <- function(temp_data = temp_data_avg,precip_data = precip_
     
     #Calculated environmental impacts on molt
     
-    p_larv_molt <- br_larvae_molt + (exp_temp_param_larv_molt * exp_temp) + (exp_precip_param_larv_molt * exp_prec)
+    p_larv_molt <- br_larvae_molt + (exp_temp_param_larv_molt * exp_temp) + (exp_precip_param_larv_molt * exp_prec) # (parameter * deer pop)
     
     #Don't let this go below 0! Doesn't make sense biologically!
     if (p_larv_molt < 0){
@@ -77,8 +77,8 @@ turkey_tick_model_v1 <- function(temp_data = temp_data_avg,precip_data = precip_
     #Don't let this go below 0! Doesn't make sense biologically!
     if (p_adult_breed < 0){
       p_adult_breed = 0
-    } else if (p_adult_breed > .1){
-      p_nymph_molt = .1
+    } else if (p_adult_breed > max_adult_breed){
+      p_nymph_molt = max_adult_breed
     }
     
     current_eggs<- tick_record[1,each_day]
@@ -109,7 +109,7 @@ turkey_tick_model_v1 <- function(temp_data = temp_data_avg,precip_data = precip_
     na_molting_updated <- current_nymphs_molting  + nymphs_to_molt - new_adults
     
     #Adults = survival rate of adults (200 day survival) + influx of nymphs - outflow of breeding adults
-    adults_updated <- current_adults*.995 + new_adults - adults_to_breed
+    adults_updated <- current_adults*.99 + new_adults - adults_to_breed
     
     #Adults -> eggs 
     eggs_updated <- current_eggs + 2500*adults_to_breed - hatching_eggs
@@ -122,33 +122,43 @@ turkey_tick_model_v1 <- function(temp_data = temp_data_avg,precip_data = precip_
 
 
 # Set up the parameters - you can change these!
-br_larvae_molt <- .000
-br_nymph_molt <- .000
+starting_nymphs <- 10
+starting_adults <- 200
 
-max_larvae_molt <- .01
-max_nymph_molt <- .01
+br_larvae_molt <- 0.0002
+br_nymph_molt <- .0001
+br_adult_breed <- .002
 
-exp_temp_param_larv_molt <- 0.0001
-exp_temp_param_nymph_molt <- 0.0001
-exp_temp_param_adult_breed <- .0001
+max_larvae_molt <- .05
+max_nymph_molt <- .05
+max_adult_breed <- .05
+# these ones
+exp_temp_param_larv_molt <- 0.000005
+exp_temp_param_nymph_molt <- 0.001
+exp_temp_param_adult_breed <- -.000004
 
-exp_precip_param_larv_molt <- 0.00001
-exp_precip_param_nymph_molt <- 0.00001
+exp_precip_param_larv_molt <- 0.0000
+exp_precip_param_nymph_molt <- 0.0000
 
+#Humidity
+
+#Host Dynamics - birds + deer
 
 #Run the simulation
 sim_run <- turkey_tick_model_v1(temp_data_avg,precip_data_avg,
-                                br_larvae_molt,br_nymph_molt,
-                                max_larvae_molt,max_nymph_molt,
+                                br_larvae_molt,br_nymph_molt,br_adult_breed,
+                                max_larvae_molt,max_nymph_molt,max_adult_breed,
                                 exp_temp_param_larv_molt,exp_temp_param_nymph_molt,
                                 exp_precip_param_larv_molt,exp_precip_param_nymph_molt,
-                                exp_temp_param_adult_breed)
+                                exp_temp_param_adult_breed,starting_nymphs,starting_adults)
 
 #Plot our data, versus target data
-plot(sim_run[2,]/10,type="l",col="forestgreen",lwd=3,lty=1,ylim=c(0,200))
-points(sim_run[4,],type="l",col="dodgerblue4",lwd=3,lty=2)
-points(sim_run[6,]*10,type="l",col="orchid",lwd=3,lty=3)
-points(temp_data_avg$week*7-3.5,temp_data_avg$avg_week_temp,type = "l")
-points(ticks_target$mmwrWeek*7-3.5,ticks_target$amblyomma_americanum,cex=1,pch=19)
 
+plot(sim_run[2,]/100,type="l",col="forestgreen",lwd=3,lty=1,ylim=c(0,200))
+points(sim_run[4,],type="l",col="dodgerblue4",lwd=3,lty=2)
+points(sim_run[6,],type="l",col="orchid",lwd=3,lty=3)
+#Look at temp data
+points(temp_data_avg$week*7-3.5,temp_data_avg$avg_week_temp,type = "l")
+#plot real data
+points(ticks_target$mmwrWeek*7-3.5,ticks_target$amblyomma_americanum,cex=1,pch=19)
 
