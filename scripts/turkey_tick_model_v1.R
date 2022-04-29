@@ -28,7 +28,7 @@ turkey_tick_model_v1 <- function(temp_data = temp_data_avg,precip_data = precip_
                                  max_larvae_molt=.01,max_nymph_molt=.01,
                                  exp_temp_param_larv_molt=0.0000,exp_temp_param_nymph_molt = 0.0001,
                                  exp_precip_param_larv_molt=0.00001,exp_precip_param_nymph_molt = 0.00001,
-                                 exp_temp_param_adult_breed=0.0000,
+                                 exp_temp_param_adult_breed=0.0002,
                                 days=365,starting_nymphs = 10,starting_adults=10){
   
   # Setting up the # days the simulation runs for
@@ -130,15 +130,19 @@ max_nymph_molt <- .01
 
 exp_temp_param_larv_molt <- 0.0001
 exp_temp_param_nymph_molt <- 0.0001
+exp_temp_param_adult_breed <- .0001
+
 exp_precip_param_larv_molt <- 0.00001
 exp_precip_param_nymph_molt <- 0.00001
+
 
 #Run the simulation
 sim_run <- turkey_tick_model_v1(temp_data_avg,precip_data_avg,
                                 br_larvae_molt,br_nymph_molt,
                                 max_larvae_molt,max_nymph_molt,
                                 exp_temp_param_larv_molt,exp_temp_param_nymph_molt,
-                                exp_precip_param_larv_molt,exp_precip_param_nymph_molt)
+                                exp_precip_param_larv_molt,exp_precip_param_nymph_molt,
+                                exp_temp_param_adult_breed)
 
 #Plot our data, versus target data
 plot(sim_run[2,]/10,type="l",col="forestgreen",lwd=3,lty=1,ylim=c(0,200))
